@@ -2,6 +2,7 @@ package com.example.matematika;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,8 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+
         button = (Button) findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +30,7 @@ public class Quiz extends AppCompatActivity {
     }
     public void openActivity2()
     {
-        Intent intent = new Intent(this, Activity2.class;);
+        Intent intent = new Intent(this, Quiz.class);
+        startActivity(intent);
     }
 }
