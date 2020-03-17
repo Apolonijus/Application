@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Quiz extends AppCompatActivity {
-    private Button button;
+
 
 
     @Override
@@ -18,19 +18,9 @@ public class Quiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
 
 
-        button = (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity2();
-            }
-        });
+
 
 
     }
-    public void openActivity2()
-    {
-        Intent intent = new Intent(this, Quiz.class);
-        startActivity(intent);
-    }
+
 }
