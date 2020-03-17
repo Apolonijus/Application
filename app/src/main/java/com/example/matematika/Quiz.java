@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 
 public class Quiz extends AppCompatActivity {
+    private Button button;
+
 
 
 
@@ -16,11 +18,23 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backActivity();
+            }
+        });
 
 
 
 
 
+    }
+    private void backActivity()
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }
