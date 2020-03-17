@@ -12,9 +12,10 @@
         android:id="@+id/button2"
         android:layout_width="123dp"
         android:layout_height="69dp"
-        android:text="Žaidimas"
+        android:text="@string/zaidimas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="157dp" />
+        tools:layout_editor_absoluteX="157dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
