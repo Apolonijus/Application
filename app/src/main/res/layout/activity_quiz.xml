@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Quiz"
 
-    android:background="@drawable/math">
+
+    >
 
     <TextView
         android:id="@+id/textView"
