@@ -16,8 +16,8 @@ public class Quiz extends AppCompatActivity {
     private Button button;
     int x;
     int y;
-    //private EditText editText;
-   // private Button checkbutton;
+    private EditText editText;
+    private Button checkbutton;
 
 
 
@@ -36,8 +36,8 @@ public class Quiz extends AppCompatActivity {
         });
 
         button = (Button) findViewById(R.id.button_ans);
-       // editText= (EditText) findViewById(R.id.editText);
-       // checkbutton= (Button) findViewById(R.id.button_check);
+
+        checkbutton= (Button) findViewById(R.id.button_check);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +54,38 @@ public class Quiz extends AppCompatActivity {
                 TextView myText = (TextView)findViewById(R.id.textView2);
                 TextView myText2 = (TextView) findViewById(R.id.textView3);
 
+
                 String myString = String.valueOf(number);
                 String myString2 = String.valueOf(number2);
 
                 myText.setText(myString);
                 myText2.setText(myString2);
+
+            }
+        });
+
+
+        checkbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              EditText tx= (EditText) findViewById(R.id.editText);
+             int amount = Integer.parseInt(tx.getText().toString());
+             // TextView myText3 = (TextView)findViewById(R.id.textView4);
+             // String myString3 = String.valueOf(amount);
+             // myText3.setText(myString3);
+
+
+                TextView tx2= (TextView) findViewById(R.id.textView3);
+                int amount_y = Integer.parseInt(tx2.getText().toString());
+                //int sum = amount + amount_y;
+
+                TextView tx3 = (TextView) findViewById(R.id.textView2);
+                int amount_x = Integer.parseInt(tx3.getText().toString());
+                int sum = amount+amount_x+amount_y;
+
+                     TextView myText4 =   (TextView) findViewById(R.id.textView4);
+                     String myString4 = String.valueOf(sum);
+                     myText4.setText(myString4);
 
             }
         });
