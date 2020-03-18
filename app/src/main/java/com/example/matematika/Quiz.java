@@ -84,11 +84,7 @@ public class Quiz extends AppCompatActivity {
                     TextView tx5_2 = findViewById(R.id.textView);
                     tx5_2.setText("*");
                 }
-                else
-                {
-                    TextView tx5_2 = findViewById(R.id.textView);
-                    tx5_2.setText("/");
-                }
+
 
 
             }
@@ -163,20 +159,7 @@ public class Quiz extends AppCompatActivity {
                         tx4_1.setText("Deja, atsakymas nera teisingas");
                     }
                 }
-                else
-                {
-                    if ((amount_x / amount_y) == amount )
-                    {
-                        TextView tx4 = (TextView) findViewById(R.id.textView4);
-                        tx4.setText("Atsakymas yra teisingas");
-                    }
 
-                    else
-                    {
-                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
-                        tx4_1.setText("Deja, atsakymas nera teisingas");
-                    }
-                }
 
 
 
