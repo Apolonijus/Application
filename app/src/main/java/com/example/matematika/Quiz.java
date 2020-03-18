@@ -83,9 +83,26 @@ public class Quiz extends AppCompatActivity {
                 int amount_x = Integer.parseInt(tx3.getText().toString());
                 int sum = amount+amount_x+amount_y;
 
-                     TextView myText4 =   (TextView) findViewById(R.id.textView4);
-                     String myString4 = String.valueOf(sum);
-                     myText4.setText(myString4);
+                    // TextView myText4 =   (TextView) findViewById(R.id.textView4);
+                     //String myString4 = String.valueOf(sum);
+                    // myText4.setText(myString4);
+
+              //  TextView tx4 = (TextView) findViewById(R.id.textView4);
+               // tx4.setText("Sveikas");
+
+
+
+
+                if ((amount_x + amount_y) == amount ) {
+                    TextView tx4 = (TextView) findViewById(R.id.textView4);
+                    tx4.setText("Atsakymas yra teisingas");
+                }
+
+                else
+                {
+                    TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                    tx4_1.setText("Deja, atsakymas nera teisingas");
+                }
 
             }
         });
