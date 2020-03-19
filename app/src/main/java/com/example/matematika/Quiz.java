@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
@@ -84,6 +85,11 @@ public class Quiz extends AppCompatActivity {
                     TextView tx5_2 = findViewById(R.id.textView);
                     tx5_2.setText("*");
                 }
+                else if (z==3)
+                {
+                    TextView tx5_2 = findViewById(R.id.textView);
+                    tx5_2.setText("/");
+                }
 
 
 
@@ -95,18 +101,22 @@ public class Quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               EditText tx= (EditText) findViewById(R.id.editText);
-             int amount = Integer.parseInt(tx.getText().toString());
-             // TextView myText3 = (TextView)findViewById(R.id.textView4);
+
+
+                double amount = Double.parseDouble(tx.getText().toString());
+
+                // TextView myText3 = (TextView)findViewById(R.id.textView4);
              // String myString3 = String.valueOf(amount);
              // myText3.setText(myString3);
 
 
                 TextView tx2= (TextView) findViewById(R.id.textView3);
-                int amount_y = Integer.parseInt(tx2.getText().toString());
+                double amount_y = Integer.parseInt(tx2.getText().toString());
+
                 //int sum = amount + amount_y;
 
                 TextView tx3 = (TextView) findViewById(R.id.textView2);
-                int amount_x = Integer.parseInt(tx3.getText().toString());
+                double amount_x = Integer.parseInt(tx3.getText().toString());
                // int sum = amount+amount_x+amount_y;
 
                     // TextView myText4 =   (TextView) findViewById(R.id.textView4);
@@ -122,13 +132,13 @@ public class Quiz extends AppCompatActivity {
                     if ((amount_x + amount_y) == amount )
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
-                        tx4.setText("Atsakymas yra teisingas");
+                        tx4.setText("Tesinga");
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
-                        tx4_1.setText("Deja, atsakymas nera teisingas");
+                        tx4_1.setText("Neteisinga");
                     }
                 }
                 else if (z==1)
@@ -136,13 +146,13 @@ public class Quiz extends AppCompatActivity {
                     if ((amount_x - amount_y) == amount )
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
-                        tx4.setText("Atsakymas yra teisingas");
+                        tx4.setText("Tesinga");
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
-                        tx4_1.setText("Deja, atsakymas nera teisingas");
+                        tx4_1.setText("Neteisinga");
                     }
                 }
                 else if (z==2)
@@ -150,13 +160,35 @@ public class Quiz extends AppCompatActivity {
                     if ((amount_x * amount_y) == amount )
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
-                        tx4.setText("Atsakymas yra teisingas");
+                        tx4.setText("Tesinga");
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
-                        tx4_1.setText("Deja, atsakymas nera teisingas");
+                        tx4_1.setText("Neteisinga");
+                    }
+                }
+                else if (z==3)
+                {
+                    double dot = amount_x/amount_y;
+                    new DecimalFormat("##.#").format(dot);
+                    new DecimalFormat("##.#").format(amount);
+
+
+                    if (dot == amount )
+                    {
+                        TextView tx4 = (TextView) findViewById(R.id.textView4);
+                      //  tx4.setText(new DecimalFormat("##.#").format(dot));
+                     //   TextView tx4 = (TextView) findViewById(R.id.textView4);
+
+                        tx4.setText("Tesinga");
+                    }
+
+                    else
+                    {
+                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                        tx4_1.setText("Neteisinga");
                     }
                 }
 
