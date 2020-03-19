@@ -19,8 +19,18 @@ public class Quiz extends AppCompatActivity {
     int z;
     private EditText editText;
     private Button checkbutton;
+
     int right=0;
     int wrong=0;
+
+
+
+//    int[]{[] rezultatas = new int[100][100];
+
+
+
+
+
 
 
 
@@ -139,15 +149,32 @@ public class Quiz extends AppCompatActivity {
                 {
                     if ((amount_x + amount_y) == amount )
                     {
+
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
+
                         right++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
+                       //  right = Integer.parseInt(tx_result.getText().toString());
+                       // tx_result.setText(right);
+
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
+
+                        wrong++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
                 else if (z==1)
@@ -157,12 +184,26 @@ public class Quiz extends AppCompatActivity {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
 
+                        right++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
+
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
+
+                        wrong++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
                 else if (z==2)
@@ -171,12 +212,26 @@ public class Quiz extends AppCompatActivity {
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
+
+                        right++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
+
+                        wrong++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
                 else if (z==3)
@@ -193,12 +248,26 @@ public class Quiz extends AppCompatActivity {
                      //   TextView tx4 = (TextView) findViewById(R.id.textView4);
 
                         tx4.setText("Tesinga");
+
+                        right++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
 
                     else
                     {
                         TextView tx4_1 = (TextView) findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
+
+                        wrong++;
+
+                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        String myString_resp = String.valueOf(right);
+                        String myString_resm = String.valueOf(wrong);
+                        tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
 
