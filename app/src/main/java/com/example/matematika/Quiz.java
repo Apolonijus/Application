@@ -2,6 +2,7 @@ package com.example.matematika;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,12 +14,9 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
-    private Button button;
     int x;
     int y;
     int z;
-    private EditText editText;
-    private Button checkbutton;
 
     int right=0;
     int wrong=0;
@@ -38,7 +36,7 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        button = findViewById(R.id.button_back);
+        Button button = findViewById(R.id.button_back);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +47,10 @@ public class Quiz extends AppCompatActivity {
 
         });
 
-        button = (Button) findViewById(R.id.button_rand);
+        button = findViewById(R.id.button_rand);
 
-        checkbutton= (Button) findViewById(R.id.button_check);
+        // private EditText editText;
+        Button checkbutton = findViewById(R.id.button_check);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +69,8 @@ public class Quiz extends AppCompatActivity {
                 y=number2;
                 z=number3;
 
-                TextView myText = (TextView)findViewById(R.id.textView2);
-                TextView myText2 = (TextView) findViewById(R.id.textView3);
+                TextView myText = findViewById(R.id.textView2);
+                TextView myText2 = findViewById(R.id.textView3);
 
 
 
@@ -83,7 +82,7 @@ public class Quiz extends AppCompatActivity {
                 myText.setText(myString);
                 myText2.setText(myString2);
 
-                TextView tx4_3=(TextView)findViewById(R.id.textView4);
+                TextView tx4_3= findViewById(R.id.textView4);
                 tx4_3.setText("");
 
                 if (z==0)
@@ -115,9 +114,10 @@ public class Quiz extends AppCompatActivity {
 
 
         checkbutton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-              EditText tx= (EditText) findViewById(R.id.editText);
+              EditText tx= findViewById(R.id.editText);
              // TextView tx_res = findViewById(R.id.result);
 
 
@@ -128,12 +128,12 @@ public class Quiz extends AppCompatActivity {
              // myText3.setText(myString3);
 
 
-                TextView tx2= (TextView) findViewById(R.id.textView3);
+                TextView tx2= findViewById(R.id.textView3);
                 double amount_y = Integer.parseInt(tx2.getText().toString());
 
                 //int sum = amount + amount_y;
 
-                TextView tx3 = (TextView) findViewById(R.id.textView2);
+                TextView tx3 = findViewById(R.id.textView2);
                 double amount_x = Integer.parseInt(tx3.getText().toString());
                // int sum = amount+amount_x+amount_y;
 
@@ -150,12 +150,12 @@ public class Quiz extends AppCompatActivity {
                     if ((amount_x + amount_y) == amount )
                     {
 
-                        TextView tx4 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
 
                         right++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -166,12 +166,12 @@ public class Quiz extends AppCompatActivity {
 
                     else
                     {
-                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -181,12 +181,12 @@ public class Quiz extends AppCompatActivity {
                 {
                     if ((amount_x - amount_y) == amount )
                     {
-                        TextView tx4 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
 
                         right++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -195,12 +195,12 @@ public class Quiz extends AppCompatActivity {
 
                     else
                     {
-                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -210,12 +210,12 @@ public class Quiz extends AppCompatActivity {
                 {
                     if ((amount_x * amount_y) == amount )
                     {
-                        TextView tx4 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
 
                         right++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -223,12 +223,12 @@ public class Quiz extends AppCompatActivity {
 
                     else
                     {
-                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -243,7 +243,7 @@ public class Quiz extends AppCompatActivity {
 
                     if (dot == amount )
                     {
-                        TextView tx4 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4 = findViewById(R.id.textView4);
                       //  tx4.setText(new DecimalFormat("##.#").format(dot));
                      //   TextView tx4 = (TextView) findViewById(R.id.textView4);
 
@@ -251,7 +251,7 @@ public class Quiz extends AppCompatActivity {
 
                         right++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
@@ -259,12 +259,12 @@ public class Quiz extends AppCompatActivity {
 
                     else
                     {
-                        TextView tx4_1 = (TextView) findViewById(R.id.textView4);
+                        TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = (TextView) findViewById(R.id.result);
+                        TextView tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
