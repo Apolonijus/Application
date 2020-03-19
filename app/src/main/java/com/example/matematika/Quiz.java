@@ -2,7 +2,6 @@ package com.example.matematika;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +19,8 @@ public class Quiz extends AppCompatActivity {
     int z;
     private EditText editText;
     private Button checkbutton;
+    int right=0;
+    int wrong=0;
 
 
 
@@ -28,6 +29,7 @@ public class Quiz extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         button = findViewById(R.id.button_back);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,13 +39,15 @@ public class Quiz extends AppCompatActivity {
 
         });
 
-        button = (Button) findViewById(R.id.button_ans);
+        button = (Button) findViewById(R.id.button_rand);
 
         checkbutton= (Button) findViewById(R.id.button_check);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Random rand = new Random();
                 Random rand2 = new Random();
                 Random rand3 = new Random();
@@ -68,6 +72,9 @@ public class Quiz extends AppCompatActivity {
 
                 myText.setText(myString);
                 myText2.setText(myString2);
+
+                TextView tx4_3=(TextView)findViewById(R.id.textView4);
+                tx4_3.setText("");
 
                 if (z==0)
                 {
@@ -101,6 +108,7 @@ public class Quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               EditText tx= (EditText) findViewById(R.id.editText);
+             // TextView tx_res = findViewById(R.id.result);
 
 
                 double amount = Double.parseDouble(tx.getText().toString());
@@ -133,6 +141,7 @@ public class Quiz extends AppCompatActivity {
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
+                        right++;
                     }
 
                     else
@@ -147,6 +156,7 @@ public class Quiz extends AppCompatActivity {
                     {
                         TextView tx4 = (TextView) findViewById(R.id.textView4);
                         tx4.setText("Tesinga");
+
                     }
 
                     else
