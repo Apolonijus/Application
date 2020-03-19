@@ -8,14 +8,13 @@
     tools:context=".Quiz"
 
 
-
     >
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cia yra quiz"
+        android:text="@string/play"
         android:textColor="@android:color/white"
         android:textSize="44sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="116dp"
         android:layout_marginRight="116dp"
-        android:hint="Iveskite atsakyma"
-        android:inputType="numberDecimal"
         android:digits="0123456789,.-"
+        android:hint="@string/iveskite_atsakyma"
+        android:inputType="numberDecimal"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="24sp"
@@ -44,7 +43,7 @@
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Atgal grizti"
+        android:text="@string/atgal_grizti"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -53,7 +52,7 @@
         android:id="@+id/button_rand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Random"
+        android:text="@string/random"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +73,7 @@
         android:id="@+id/button_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check"
+        android:text="@string/check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,10 +104,10 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
