@@ -14,8 +14,29 @@
         android:layout_height="69dp"
         android:text="@string/zaidimas"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="157dp"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/book"
+
+        android:text="Book"
+        android:layout_width="123dp"
+        android:layout_height="69dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Book" />
+
+    <Button
+        android:id="@+id/button_ned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Broliukui"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

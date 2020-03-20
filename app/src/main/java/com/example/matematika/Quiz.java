@@ -1,10 +1,13 @@
 package com.example.matematika;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,10 +26,6 @@ public class Quiz extends AppCompatActivity {
 
 
 
-//    int[]{[] rezultatas = new int[100][100];
-
-
-
 
 
 
@@ -36,7 +35,20 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+
+        Button button_rand = findViewById(R.id.button_rand);
+        Button button_check = findViewById(R.id.button_check);
         Button button = findViewById(R.id.button_back);
+
+
+       // TextView tx_res = findViewById(R.id.result_2);
+
+
+
+
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,12 +59,14 @@ public class Quiz extends AppCompatActivity {
 
         });
 
-        button = findViewById(R.id.button_rand);
+
 
         // private EditText editText;
-        Button checkbutton = findViewById(R.id.button_check);
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+
+
+        button_rand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -113,7 +127,7 @@ public class Quiz extends AppCompatActivity {
         });
 
 
-        checkbutton.setOnClickListener(new View.OnClickListener() {
+        button_check.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
@@ -159,6 +173,27 @@ public class Quiz extends AppCompatActivity {
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
+
+SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Quiz.this);
+SharedPreferences.Editor editor = prefs.edit();
+
+editor.putInt("right",right);
+editor.apply();
+
+
+                     
+
+
+
+
+                        //                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Quiz.this);
+//                SharedPreferences.Editor editor = prefs.edit();
+//
+//                editor.putInt("right",right);
+//                editor.putInt("wrong", wrong);
+//                editor.apply();
+
+
                        //  right = Integer.parseInt(tx_result.getText().toString());
                        // tx_result.setText(right);
 
@@ -270,6 +305,7 @@ public class Quiz extends AppCompatActivity {
                         tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
+
 
 
 

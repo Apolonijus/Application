@@ -16,6 +16,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
+    private  Button button_book;
+    private Button button_ned;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +33,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        button_book = findViewById(R.id.book);
+        button_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity3();
+            }
+        });
+
+        button_ned = findViewById(R.id.button_ned);
+        button_ned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity();
+            }
+        });
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+
+       // Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -67,9 +86,20 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     public void openActivity2()
     {
         Intent intent = new Intent(this, Quiz.class);
+        startActivity(intent);
+    }
+    public void openActivity3()
+    {
+        Intent intent = new Intent(this, Book.class);
+        startActivity(intent);
+    }
+    public void openActivity()
+    {
+        Intent intent = new Intent(this, testing.class);
         startActivity(intent);
     }
 }
