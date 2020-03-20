@@ -26,6 +26,11 @@ public class Quiz extends AppCompatActivity {
 
 
 
+//    int[]{[] rezultatas = new int[100][100];
+//public static final String TEXT = "text";
+//    public  static final  String SHARED_PREFS = "sharedPrefs";
+
+
 
 
 
@@ -181,7 +186,7 @@ editor.putInt("right",right);
 editor.apply();
 
 
-                     
+
 
 
 
@@ -316,9 +321,23 @@ editor.apply();
 
 
 
+    }
 
+   /* public void saveData() {
+        TextView tx4 = findViewById(R.id.result);
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putInt(TEXT, tx4.get
+                .getText().toString());
 
     }
+public  void  loadData(){
+SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+right = sharedPreferences.getInt(TEXT, Integer.parseInt(""));
+
+}*/
+
     private void backActivity()
     {
         Intent intent = new Intent(this, MainActivity.class);
