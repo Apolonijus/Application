@@ -21,13 +21,14 @@
     <Button
         android:id="@+id/book"
 
-        android:text="Book"
-        android:layout_width="123dp"
-        android:layout_height="69dp"
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:drawableBottom="@drawable/book"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Book" />
+         />
 
     <Button
         android:id="@+id/button_ned"
