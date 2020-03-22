@@ -7,7 +7,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.view.Menu;
@@ -17,7 +16,9 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private  Button button_book;
-    private Button button_ned;
+    private Button button_pinch;
+    private  Button button_ned;
+    private Button button_rok;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +42,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_ned = findViewById(R.id.button_ned);
-        button_ned.setOnClickListener(new View.OnClickListener() {
+        button_pinch = findViewById(R.id.button_ned);
+        button_pinch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity();
             }
         });
+
+        button_ned = findViewById(R.id.button_test_ned);
+        button_ned.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                open_test_n();}
+        });
+
+        button_rok = findViewById(R.id.button_test_rok);
+        button_rok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                open_test_r();
+            }
+        });
+
+
 
 
 
@@ -100,6 +118,16 @@ public class MainActivity extends AppCompatActivity {
     public void openActivity()
     {
         Intent intent = new Intent(this, testing.class);
+        startActivity(intent);
+    }
+    public void open_test_n()
+    {
+        Intent intent = new Intent(this, Testing_Place_N.class);
+        startActivity(intent);
+    }
+    public void open_test_r()
+    {
+        Intent intent = new Intent(this, Testing_Place_R.class);
         startActivity(intent);
     }
 }
