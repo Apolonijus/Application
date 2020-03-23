@@ -63,6 +63,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text=""
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,5 +119,6 @@
         android:layout_height="wrap_content"
 
         tools:layout_editor_absoluteX="186dp"
-        tools:layout_editor_absoluteY="262dp" />
+        tools:layout_editor_absoluteY="262dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -170,7 +170,7 @@ public class Quiz extends AppCompatActivity {
                     {
 
                         TextView tx4 = findViewById(R.id.textView4);
-                        tx4.setText("Tesinga");
+                        tx4.setText("Teisingai");
 
                         right++;
 
@@ -222,7 +222,7 @@ editor.apply();
                     if ((amount_x - amount_y) == amount )
                     {
                         TextView tx4 = findViewById(R.id.textView4);
-                        tx4.setText("Tesinga");
+                        tx4.setText("Teisingai");
 
                         right++;
 
@@ -251,7 +251,7 @@ editor.apply();
                     if ((amount_x * amount_y) == amount )
                     {
                         TextView tx4 = findViewById(R.id.textView4);
-                        tx4.setText("Tesinga");
+                        tx4.setText("Teisingai");
 
                         right++;
 
@@ -287,7 +287,7 @@ editor.apply();
                       //  tx4.setText(new DecimalFormat("##.#").format(dot));
                      //   TextView tx4 = (TextView) findViewById(R.id.textView4);
 
-                        tx4.setText("Tesinga");
+                        tx4.setText("Teisingai");
 
                         right++;
 

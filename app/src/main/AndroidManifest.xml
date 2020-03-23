@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Testing_Place_R"></activity>
+        <activity android:name=".Paint.Main2Activity"></activity>
+        <activity android:name=".Paint.PaintView" />
+        <activity android:name=".Paint.Draw" />
+        <activity android:name=".Testing_Place_R" />
         <activity android:name=".Testing_Place_N" />
         <activity android:name=".testing" />
         <activity android:name=".Book" />
