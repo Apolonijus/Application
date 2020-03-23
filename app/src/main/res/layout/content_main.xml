@@ -91,6 +91,55 @@
 
                     </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    >
+                    <Button
+                        android:id="@+id/button_ned"
+                        android:layout_width="match_parent"
+                        android:layout_height="118dp"
+                        android:text="Broliai"
+                        android:textSize="80sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <Button
+                        android:id="@+id/button_test_ned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Didesnis brolis"
+                        app:layout_constraintBottom_toTopOf="@+id/button2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <Button
+                        android:id="@+id/button_test_rok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mazesnis brolis"
+                        app:layout_constraintBottom_toTopOf="@+id/book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                </LinearLayout>
+
+
+
+
 
                 </LinearLayout>
 
@@ -99,35 +148,8 @@
             </RelativeLayout>
 
 
-            <Button
-                android:id="@+id/button_ned"
-                android:layout_width="238dp"
-                android:layout_height="118dp"
-                android:text="Broliukui"
-                android:textSize="100sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                 android:id="@+id/button_test_ned"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Didesnis brolis"
-                 app:layout_constraintBottom_toTopOf="@+id/button2"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent"
-                 tools:ignore="MissingConstraints" />
 
-             <Button
-                 android:id="@+id/button_test_rok"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Mazesnis brolis"
-                 app:layout_constraintBottom_toTopOf="@+id/book"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintTop_toTopOf="parent"
-                 tools:ignore="MissingConstraints" />
 
         </LinearLayout>
 
