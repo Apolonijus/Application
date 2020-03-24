@@ -85,10 +85,10 @@
                         <Button
                             android:id="@+id/book"
                             android:layout_width="150dp"
-                            android:layout_height="110dp"
+                            android:layout_height="80dp"
                             android:drawableTop="@drawable/book"
                             android:background="@android:color/transparent"
-                            android:layout_gravity="bottom"
+                            android:layout_gravity="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
