@@ -2,6 +2,8 @@ package com.example.matematika.Paint;
 
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,8 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.matematika.R;
@@ -23,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private PaintView paintView;
     private int defaultColor;
-    //  private int STORAGE_PERMISSION_CODE = 1;
+      private int STORAGE_PERMISSION_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            //    openColourPicker();
+                //openColourPicker();
 
             }
 
@@ -89,60 +94,60 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-//    private void requestStoragePermission () {
-//
-//        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-//
-//            new AlertDialog(this)
-//                    .setTitle("Permission needed")
-//                    .setMessage("Needed to save image")
-//                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//
-//                            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-//
-//                        }
-//                    })
-//                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//
-//                            dialog.dismiss();
-//
-//                        }
-//
-//                    })
-//                    .create().show();
-//
-//        } else {
-//
-//            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-//
-//        }
-//
-//    }
+    private void requestStoragePermission () {
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//
-//        if (requestCode == STORAGE_PERMISSION_CODE) {
-//
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//
-//                Toast.makeText(this, "Access granted", Toast.LENGTH_LONG).show();
-//
-//            } else {
-//
-//                Toast.makeText(this, "Access denied", Toast.LENGTH_LONG).show();
-//
-//            }
-//
-//        }
-//
-//    }
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Permission needed")
+                    .setMessage("Needed to save image")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            ActivityCompat.requestPermissions(Main2Activity.this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+
+                        }
+                    })
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            dialog.dismiss();
+
+                        }
+
+                    })
+                    .create().show();
+
+        } else {
+
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        if (requestCode == STORAGE_PERMISSION_CODE) {
+
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                Toast.makeText(this, "Access granted", Toast.LENGTH_LONG).show();
+
+            } else {
+
+                Toast.makeText(this, "Access denied", Toast.LENGTH_LONG).show();
+
+            }
+
+        }
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -162,10 +167,10 @@ public class Main2Activity extends AppCompatActivity {
 
                 if (ContextCompat.checkSelfPermission(Main2Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
-//                    requestStoragePermission();
+                   requestStoragePermission();
 
                 }
-                //    paintView.saveImage();
+                    paintView.saveImage();
                 return true;
 
         }
@@ -181,7 +186,7 @@ public class Main2Activity extends AppCompatActivity {
 //            @Override
 //            public void onCancel(AmbilWarnaDialog dialog) {
 //
-//                Toast.makeText(MainActivity.this, "Unavailable", Toast.LENGTH_LONG).show();
+//                Toast.makeText(Main2Activity.this, "Unavailable", Toast.LENGTH_LONG).show();
 //
 //            }
 //
@@ -195,9 +200,9 @@ public class Main2Activity extends AppCompatActivity {
 //            }
 //
 //        });
-//
-//
-//    }
+
+
+   // }
 
 }
 

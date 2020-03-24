@@ -1,17 +1,23 @@
 package com.example.matematika.Paint;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.Environment;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PaintView extends View {
@@ -206,60 +212,60 @@ public class PaintView extends View {
 
     }
 
-//    @SuppressLint("WrongThread")
-//    public void saveImage () {
-//
-//        int count = 0;
-//
-//        File sdDirectory = Environment.getExternalStorageDirectory();
-//        File subDirectory = new File(sdDirectory.toString() + "/Pictures/Paint");
-//
-//        if (subDirectory.exists()) {
-//
-//            File[] existing = subDirectory.listFiles();
-//
-//            for (File file : existing) {
-//
-//                if (file.getName().endsWith(".jpg") || file.getName().endsWith(".png")) {
-//
-//                    count++;
-//
-//                }
-//
-//            }
-//
-//        } else {
-//
-//            subDirectory.mkdir();
-//
-//        }
-//
-//        if (subDirectory.exists()) {
-//
-//            File image = new File(subDirectory, "/drawing_" + (count + 1) + ".png");
-//            FileOutputStream fileOutputStream;
-//
-//            try {
-//
-//                fileOutputStream = new FileOutputStream(image);
-//
-//                mBitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-//
-//                fileOutputStream.flush();
-//                fileOutputStream.close();
-//
-//                Toast.makeText(getContext(), "saved", Toast.LENGTH_LONG).show();
-//
-//            } catch (FileNotFoundException e) {
-//
-//
-//            } catch (IOException e) {
-//
-//
-//            }
-//
-//        }
-//
-//    }
-//
+    @SuppressLint("WrongThread")
+    public void saveImage () {
+
+        int count = 0;
+
+        File sdDirectory = Environment.getExternalStorageDirectory();
+        File subDirectory = new File(sdDirectory.toString() + "/Pictures/Paint");
+
+        if (subDirectory.exists()) {
+
+            File[] existing = subDirectory.listFiles();
+
+            for (File file : existing) {
+
+                if (file.getName().endsWith(".jpg") || file.getName().endsWith(".png")) {
+
+                    count++;
+
+                }
+
+            }
+
+        } else {
+
+            subDirectory.mkdir();
+
+        }
+
+        if (subDirectory.exists()) {
+
+            File image = new File(subDirectory, "/drawing_" + (count + 1) + ".png");
+            FileOutputStream fileOutputStream;
+
+            try {
+
+                fileOutputStream = new FileOutputStream(image);
+
+                mBitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+
+                fileOutputStream.flush();
+                fileOutputStream.close();
+
+                Toast.makeText(getContext(), "saved", Toast.LENGTH_LONG).show();
+
+            } catch (FileNotFoundException e) {
+
+
+            } catch (IOException e) {
+
+
+            }
+
+        }
+
+    }
+
 }
