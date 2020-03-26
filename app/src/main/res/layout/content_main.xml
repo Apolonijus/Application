@@ -7,7 +7,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="@drawable/background">
+    android:background="@drawable/background_dark">
+
 
 
     <ScrollView
@@ -67,8 +68,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        >
+                        android:layout_marginBottom="10dp">
 
                         <Button
                             android:id="@+id/button2"
@@ -80,6 +80,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="MissingConstraints" />
+
                         <Space
                             android:layout_width="90dp"
                             android:layout_height="140dp"/>
@@ -93,8 +94,7 @@
                             android:layout_gravity="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </LinearLayout>
 
@@ -104,14 +104,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="135dp"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"
-                    >
+                    android:layout_marginBottom="10dp">
 
                     <Button
                         android:id="@+id/button_test_ned"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Didesnis brolis"
+                        android:text="@string/didesnis_brolis"
                         app:layout_constraintBottom_toTopOf="@+id/button2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -121,14 +120,11 @@
                         android:id="@+id/button_test_rok"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mazesnis brolis"
+                        android:text="@string/mazesnis_brolis"
                         app:layout_constraintBottom_toTopOf="@+id/book"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints" />
-
-
-
 
                 </LinearLayout>
 
@@ -136,14 +132,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        >
+                        android:layout_marginBottom="10dp">
 
                         <Button
                             android:id="@+id/button_paint"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Paint"
+                            android:text="@string/paint"
                             app:layout_constraintBottom_toTopOf="@+id/button_ned"
                             app:layout_constraintEnd_toStartOf="@+id/book"
                             app:layout_constraintStart_toEndOf="@+id/button2"
@@ -154,35 +149,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="135dp"
                         android:orientation="horizontal"
-                        android:layout_marginBottom="10dp"
-                        >
+                        android:layout_marginBottom="10dp">
+
                         <Button
                             android:id="@+id/button_ned"
                             android:layout_width="match_parent"
                             android:layout_height="118dp"
-                            android:text="Broliai"
+                            android:text="@string/broliai"
                             android:textSize="80sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
                     </LinearLayout>
 
-
-
-
-
                 </LinearLayout>
 
-
-
             </RelativeLayout>
-
-
-
-
-
-
-
 
         </LinearLayout>
 

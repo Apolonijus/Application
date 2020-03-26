@@ -12,4 +12,8 @@
     <string name="back">Back</string>
     <string name="welome">Welome</string>
     <string name="this_is_the_loading_screen">This is the loading screen</string>
+    <string name="broliai">Broliai</string>
+    <string name="paint">Paint</string>
+    <string name="mazesnis_brolis">Mazesnis brolis</string>
+    <string name="didesnis_brolis">Didesnis brolis</string>
 </resources>
