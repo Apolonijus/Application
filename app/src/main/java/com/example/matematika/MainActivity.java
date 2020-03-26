@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_rok;
     private Button buuton_paint;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 open_paint();
             }
         });
+
+
 
 
 

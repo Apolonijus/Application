@@ -12,30 +12,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Paint.Main2Activity"></activity>
-        <activity android:name=".Paint.PaintView"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Paint.Draw"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Testing_Place_R"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Testing_Place_N"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".testing"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Book"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Quiz"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+        <activity android:name=".LoadingActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Paint.Main2Activity" />
+        <activity
+            android:name=".Paint.PaintView"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Paint.Draw"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Testing_Place_R"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Testing_Place_N"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".testing"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Book"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Quiz"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
     </application>
 
