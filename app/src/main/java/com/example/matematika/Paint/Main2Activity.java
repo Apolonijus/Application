@@ -23,6 +23,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.matematika.R;
 
+import yuku.ambilwarna.AmbilWarnaDialog;
+
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //openColourPicker();
+                openColourPicker();
 
             }
 
@@ -179,30 +181,30 @@ public class Main2Activity extends AppCompatActivity {
 
     }
 
-//    private void openColourPicker() {
-//
-//        AmbilWarnaDialog ambilWarnaDialog = new AmbilWarnaDialog(this, defaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
-//
-//            @Override
-//            public void onCancel(AmbilWarnaDialog dialog) {
-//
-//                Toast.makeText(Main2Activity.this, "Unavailable", Toast.LENGTH_LONG).show();
-//
-//            }
-//
-//            @Override
-//            public void onOk(AmbilWarnaDialog dialog, int color) {
-//
-//                defaultColor = color;
-//
-//                paintView.setColor(color);
-//
-//            }
-//
-//        });
+    private void openColourPicker() {
 
+        AmbilWarnaDialog ambilWarnaDialog = new AmbilWarnaDialog(this, defaultColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
 
-   // }
+            @Override
+            public void onCancel(AmbilWarnaDialog dialog) {
+
+                Toast.makeText(Main2Activity.this, "Unavailable", Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+
+                defaultColor = color;
+
+                paintView.setColor(color);
+
+            }
+
+        });
+
+        ambilWarnaDialog.show();
+    }
 
 }
 

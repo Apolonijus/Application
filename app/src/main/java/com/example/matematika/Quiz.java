@@ -1,8 +1,5 @@
 package com.example.matematika;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,28 +9,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Quiz extends AppCompatActivity {
-    int x;
+    private int x;
     int y;
     int z;
 
-    int right=0;
-    int wrong=0;
+    int right = 0;
+    int wrong = 0;
 
+    private TextView myText;
+   private TextView tx_result;
+
+    public static final  String SHARED_PREFS = "sharedPrefs";
+    public static final String TEXT = "text";
+
+    private String saved_left = "";
 
 
 //    int[]{[] rezultatas = new int[100][100];
 //public static final String TEXT = "text";
 //    public  static final  String SHARED_PREFS = "sharedPrefs";
-
-
-
-
-
 
 
     @Override
@@ -47,12 +49,7 @@ public class Quiz extends AppCompatActivity {
         Button button = findViewById(R.id.button_back);
 
 
-       // TextView tx_res = findViewById(R.id.result_2);
-
-
-
-
-
+        // TextView tx_res = findViewById(R.id.result_2);
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +62,7 @@ public class Quiz extends AppCompatActivity {
         });
 
 
-
         // private EditText editText;
-
-
 
 
         button_rand.setOnClickListener(new View.OnClickListener() {
@@ -84,14 +78,12 @@ public class Quiz extends AppCompatActivity {
                 int number2 = rand2.nextInt(25);
                 int number3 = rand3.nextInt(4);
 
-                x=number;
-                y=number2;
-                z=number3;
+                x = number;
+                y = number2;
+                z = number3;
 
-                TextView myText = findViewById(R.id.textView2);
+                myText = findViewById(R.id.textView2);
                 TextView myText2 = findViewById(R.id.textView3);
-
-
 
 
                 String myString = String.valueOf(number);
@@ -101,94 +93,80 @@ public class Quiz extends AppCompatActivity {
                 myText.setText(myString);
                 myText2.setText(myString2);
 
-                TextView tx4_3= findViewById(R.id.textView4);
+                TextView tx4_3 = findViewById(R.id.textView4);
                 tx4_3.setText("");
 
-                if (z==0)
-                {
+                if (z == 0) {
                     TextView tx5_1 = findViewById(R.id.textView);
                     tx5_1.setText("+");
 
-                }
-                else if (z==1)
-                {
+                } else if (z == 1) {
                     TextView tx5_2 = findViewById(R.id.textView);
                     tx5_2.setText("-");
-                }
-                else if (z==2)
-                {
+                } else if (z == 2) {
                     TextView tx5_2 = findViewById(R.id.textView);
                     tx5_2.setText("*");
-                }
-                else if (z==3)
-                {
+                } else if (z == 3) {
                     TextView tx5_2 = findViewById(R.id.textView);
                     tx5_2.setText("/");
                 }
-
 
 
             }
         });
 
 
+
         button_check.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-              EditText tx= findViewById(R.id.editText);
-             // TextView tx_res = findViewById(R.id.result);
+                EditText tx = findViewById(R.id.editText);
+                // TextView tx_res = findViewById(R.id.result);
 
 
                 double amount = Double.parseDouble(tx.getText().toString());
 
                 // TextView myText3 = (TextView)findViewById(R.id.textView4);
-             // String myString3 = String.valueOf(amount);
-             // myText3.setText(myString3);
+                // String myString3 = String.valueOf(amount);
+                // myText3.setText(myString3);
 
 
-                TextView tx2= findViewById(R.id.textView3);
+                TextView tx2 = findViewById(R.id.textView3);
                 double amount_y = Integer.parseInt(tx2.getText().toString());
 
                 //int sum = amount + amount_y;
 
                 TextView tx3 = findViewById(R.id.textView2);
                 double amount_x = Integer.parseInt(tx3.getText().toString());
-               // int sum = amount+amount_x+amount_y;
+                // int sum = amount+amount_x+amount_y;
 
-                    // TextView myText4 =   (TextView) findViewById(R.id.textView4);
-                     //String myString4 = String.valueOf(sum);
-                    // myText4.setText(myString4);
+                // TextView myText4 =   (TextView) findViewById(R.id.textView4);
+                //String myString4 = String.valueOf(sum);
+                // myText4.setText(myString4);
 
-              //  TextView tx4 = (TextView) findViewById(R.id.textView4);
-               // tx4.setText("Sveikas");
+                //  TextView tx4 = (TextView) findViewById(R.id.textView4);
+                // tx4.setText("Sveikas");
 
 
-                if (z==0)
-                {
-                    if ((amount_x + amount_y) == amount )
-                    {
+                if (z == 0) {
+                    if ((amount_x + amount_y) == amount) {
 
                         TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Teisingai");
 
                         right++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
 
-SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Quiz.this);
-SharedPreferences.Editor editor = prefs.edit();
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Quiz.this);
+                        SharedPreferences.Editor editor = prefs.edit();
 
-editor.putInt("right",right);
-editor.apply();
-
-
-
-
-
+                        editor.putInt("right", right);
+                        editor.apply();
 
 
                         //                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Quiz.this);
@@ -199,127 +177,109 @@ editor.apply();
 //                editor.apply();
 
 
-                       //  right = Integer.parseInt(tx_result.getText().toString());
-                       // tx_result.setText(right);
+                        //  right = Integer.parseInt(tx_result.getText().toString());
+                        // tx_result.setText(right);
 
-                    }
-
-                    else
-                    {
+                    } else {
                         TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
                     }
-                }
-                else if (z==1)
-                {
-                    if ((amount_x - amount_y) == amount )
-                    {
+                } else if (z == 1) {
+                    if ((amount_x - amount_y) == amount) {
                         TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Teisingai");
 
                         right++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
 
-                    }
-
-                    else
-                    {
+                    } else {
                         TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
                     }
-                }
-                else if (z==2)
-                {
-                    if ((amount_x * amount_y) == amount )
-                    {
+                } else if (z == 2) {
+                    if ((amount_x * amount_y) == amount) {
                         TextView tx4 = findViewById(R.id.textView4);
                         tx4.setText("Teisingai");
 
                         right++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
-                    }
-
-                    else
-                    {
+                    } else {
                         TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
                     }
-                }
-                else if (z==3)
-                {
-                    double dot = amount_x/amount_y;
+                } else if (z == 3) {
+                    double dot = amount_x / amount_y;
                     new DecimalFormat("##.#").format(dot);
                     new DecimalFormat("##.#").format(amount);
 
 
-                    if (dot == amount )
-                    {
+                    if (dot == amount) {
                         TextView tx4 = findViewById(R.id.textView4);
-                      //  tx4.setText(new DecimalFormat("##.#").format(dot));
-                     //   TextView tx4 = (TextView) findViewById(R.id.textView4);
+                        //  tx4.setText(new DecimalFormat("##.#").format(dot));
+                        //   TextView tx4 = (TextView) findViewById(R.id.textView4);
 
                         tx4.setText("Teisingai");
 
                         right++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
-                    }
-
-                    else
-                    {
+                    } else {
                         TextView tx4_1 = findViewById(R.id.textView4);
                         tx4_1.setText("Neteisinga");
 
                         wrong++;
 
-                        TextView tx_result = findViewById(R.id.result);
+                         tx_result = findViewById(R.id.result);
                         String myString_resp = String.valueOf(right);
                         String myString_resm = String.valueOf(wrong);
                         tx_result.setText(myString_resp + " / " + myString_resm);
                     }
                 }
 
-
-
-
+                saveData();
 
             }
         });
+        loadData();
+//        updateView();
 
-
-
+//        if (savedInstanceState != null)
+//        {
+//            x = savedInstanceState.getInt("Teisingi");
+//            myText.setText(String.valueOf(x));
+//        }
 
     }
 
@@ -338,10 +298,43 @@ right = sharedPreferences.getInt(TEXT, Integer.parseInt(""));
 
 }*/
 
-    private void backActivity()
-    {
+    private void backActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
+//    @Override
+//    protected void onSaveInstanceState( Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putInt("Teisingi",x);
+//       // outState.putInt("Neteisingi", wrong);
+//    }
+
+//    @Override
+//    protected void onRestoreInstanceState( Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        savedInstanceState.getInt("Teisingi");
+//    }
+
+    public void saveData()
+    {
+        SharedPreferences sharedPreferences  = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(TEXT, tx_result.getText().toString());
+
+        editor.apply();
+
+        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
+    }
+    public void loadData()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        saved_left = sharedPreferences.getString(TEXT, "");
+    }
+
+//    public void  updateView()
+//    {
+//        tx_result.setText(saved_left);
+//    }
 }
