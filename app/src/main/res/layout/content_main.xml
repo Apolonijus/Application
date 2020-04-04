@@ -134,15 +134,31 @@
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
 
-                        <Button
+
+
+                        <pl.droidsonroids.gif.GifImageButton
                             android:id="@+id/button_paint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/paint"
-                            app:layout_constraintBottom_toTopOf="@+id/button_ned"
-                            app:layout_constraintEnd_toStartOf="@+id/book"
-                            app:layout_constraintStart_toEndOf="@+id/button2"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/paint"
+                            android:background="@android:color/transparent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="MissingConstraints"/>
+
+
+<!--                        -->
+<!--                        <Button-->
+<!--                            android:id="@+id/button_paint"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/paint"-->
+<!--                            app:layout_constraintBottom_toTopOf="@+id/button_ned"-->
+<!--                            app:layout_constraintEnd_toStartOf="@+id/book"-->
+<!--                            app:layout_constraintStart_toEndOf="@+id/button2"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" -->
+<!--                            />-->
                     </LinearLayout>
 
                     <LinearLayout

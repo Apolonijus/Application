@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button_pinch;
     private  Button button_ned;
     private Button button_rok;
-    private Button buuton_paint;
+    private pl.droidsonroids.gif.GifImageButton buuton_paint;
 
 
     @Override
